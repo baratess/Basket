@@ -1,0 +1,22 @@
+[
+    {
+        "id":1,
+        "title":"Ciklet",
+        "price": 0.5
+    },
+    {
+        "id": 2,
+        "title": "Kola",
+        "price": 6
+    },
+    {
+        "id": 3,
+        "title": "Cips",
+        "price": 25
+    },
+    {
+        "id": 4,
+        "title": "T-shirt",
+        "price": 1000
+    }
+]
