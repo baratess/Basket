@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import { useState, useEffect } from "react";
 import product from "./product.json";
 import Product from "./components/Product";
+import Basket from "./components/Basket";
 
 import "./App.css";
 
@@ -26,17 +27,26 @@ function App() {
   return (
     <>
       <Header total={total} money={money} />
-      {product.map((product) => (
-        <Product
+      <div className="container product">
+        {product.map((product) => (
+          <Product
+            total={total}
+            money={money}
+            key={product.id}
+            basket={basket}
+            setBasket={setBasket}
+            product={product}
+          />
+        ))}
+      </div>
+      {total > 0 && (
+        <Basket
           total={total}
-          money={money}
-          key={product.id}
-          basket={basket}
-          setBasket={setBasket}
+          resetBasket={resetBasket}
           product={product}
+          basket={basket}
         />
-      ))}
-      <button onClick={resetBasket}>Sepeti Temizle</button>
+      )}
     </>
   );
 }
